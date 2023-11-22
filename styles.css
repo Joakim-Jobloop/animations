@@ -1,80 +1,110 @@
 body {
-    margin: 0;
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background-color: #f0f0f0;
-    gap: 50px;
-  }
-  
-  section {
+    align-items: center;
+    background-color: bisque;
+}
+
+section {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     gap: 50px;
-  }
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+
 .box {
     width: 150px;
     height: 150px;
 }
 
-  .ball {
+.ball {
     background-color: #3498db;
     border-radius: 50%;
-    animation: bounce 1s infinite alternate; /* Use the bounce animation for 1 second, repeat infinitely */
-  }
-  
-  @keyframes bounce {
-    to {
-      transform: translateY(-100px); /* Move the ball 100 pixels upward */
-    }
-  }
+    animation: bounce 1s infinite cubic-bezier(0.01,-0.14, 0, 0.99) alternate;
+}
 
-  .fade-in {
+@keyframes bounce {
+    to {
+        transform: translateY(-300px);
+    }
+}
+
+.fade-in {
     background-color: #27ae60;
     opacity: 0;
-    animation: fadeIn 2s alternate infinite; /* Use the fadeIn animation for 2 seconds */
-  }
-  
-  @keyframes fadeIn {
-    to {
-      opacity: 1;
-    }
-  }
+    animation: fadeIn 3s linear infinite alternate;
+}
 
-  .spin {
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.spin {
     background-color: #e74c3c;
-    animation: spin 2s infinite linear; /* Use the spin animation for 2 seconds, repeat infinitely */
-  }
-  
-  @keyframes spin {
-    to {
-      transform: rotate(360deg);
-    }
-  }
+    animation: spin 2s infinite ease alternate;
+}
 
-  .color-change {
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.color-change {
     background-color: #05141e;
-    animation: colorChange 2s infinite alternate; /* Use the colorChange animation for 2 seconds, repeat infinitely, alternate direction */
-  }
-  
-  @keyframes colorChange {
-    to {
-      background-color: #c5e73c;
-    }
-  }
+    animation: colorChange 5s infinite alternate;
+}
 
-  .pulse {
+@keyframes colorChange {
+    50% {
+        background-color: yellow;
+    }
+    75% {
+        background-color: blueviolet;
+        /* opacity: 0.1; */
+    }
+    100% {
+        background-color: aqua;
+    }
+}
+
+.pulse {
     background-color: #e67e22;
     border-radius: 50%;
-    animation: pulse 1.5s infinite alternate; /* Use the pulse animation for 1.5 seconds, repeat infinitely, alternate direction */
-  }
-  
-  @keyframes pulse {
+    animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
     to {
-      transform: scale(1.2);
+        transform: scale(1.2);
+        /* background-color: #27ae60; */
     }
-  }
+}
+
+.DIA {
+    background-color: aliceblue;
+    opacity: 0;
+    animation: DIA 3s infinite alternate;
+}
+
+@keyframes DIA {
+    50% {
+        background-color: yellow;
+        transform: rotate(0deg) translateY(0px);
+    }
+    75% {
+        background-color: blueviolet;
+        transform: rotate(360deg) translateY(-150px);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(30deg) translateX(-150px);
+        background-color: aqua;
+    }
+}
 
